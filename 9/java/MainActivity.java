@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity
                 String message=e1.getText().toString();
                 try
                 {
-                    File f=new File("/sdcard/myfile.txt");
+                    File f=new File(getExternalFilesDir(null),"file.txt");
                     f.createNewFile();
                     FileOutputStream fout=new FileOutputStream(f);
                     fout.write(message.getBytes());
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity
                 String buf = "";
                 try
                 {
-                    File f = new File("/sdcard/myfile.txt");
+                    File f = new File(getExternalFilesDir(null),"file.txt");
                     FileInputStream fin = new FileInputStream(f);
                     BufferedReader br = new BufferedReader(new InputStreamReader(fin));
                     while ((message = br.readLine()) != null)
